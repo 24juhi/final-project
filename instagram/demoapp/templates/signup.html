@@ -1,0 +1,69 @@
+<!Doctype html>
+<html>
+<body>
+	<head>
+		<title>sign up</title>
+
+		<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--Bootstrap-->
+		<link href="css/bootstrap.css" rel="stylesheet">
+        		<style>
+
+
+
+</style>
+	</head>
+	<body background="https://s-media-cache-ak0.pinimg.com/originals/f4/af/0d/f4af0d92a1419be64f4a2ea28952f436.jpg">
+
+<td colspan=2><td><font size=4><b>
+    <div class="background-image"></div>
+    <div class="content"></div>
+
+        </div>
+		<center>
+            <center>
+                <h1 style="color:red">INSTAGRAM CLONE</h1>
+			    <h3>Signup</h3>
+			    <!------<h4> today's date and time :{{ today}}</h4>---->
+			    <form method="POST">
+			    {% csrf_token %}
+                <div>
+                    <label for="username">Username: </label>
+                    <input id="username" name="username" value="{{ username }}" type="text">
+                </div><br />
+                <div>
+                    <label for="name">Name: </label>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="name" name="name" value="{{name}}" type="text">
+                </div><br />
+
+                 <div>
+                    <label for="email">Email: </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="email" name="email" value="email" type="text">
+                 </div><br />
+
+                 <div>
+                    <label for="password">Password: </label>
+                    <input id="password" name="password" value="{{password}}" type="password">
+                 </div><br />
+                    <center> <input value="Sign Up" style="background-color: #07c ; height:45px; width:100px" type="submit">
+                </form></center>
+
+
+		    </div>
+            <br><br>
+            <div><h3>Already a user?</h3><a href="login/">Login</a> </div>
+        </center>
+
+
+		<!--Javascript files-->
+		<!--Jquery library-->
+		<script src="js/jquery-3.2.1.js"></script>
+</b></font></td>
+</div>
+</body>
+</html>
+
+
