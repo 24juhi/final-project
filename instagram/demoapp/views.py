@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from forms import SignUpForm, LoginForm, PostForm, LikeForm, CommentForm
@@ -7,10 +8,9 @@ from datetime import timedelta
 from django.utils import timezone
 from instagram.settings import BASE_DIR
 
-
 from imgurpython import ImgurClient
-from django.http import HttpResponse
 
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -22,16 +22,16 @@ def signup_view(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            # insert data to DB
+            # saving data to DB
             user = UserModel(name=name, password=make_password(password), email=email, username=username)
             user.save()
             return render(request, 'success.html')
         else:
-            return HttpResponse("Form data is not valid")
+            return HttpResponse("Form data is not valid.s")
     else:
         form = SignUpForm()
 
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'signup.html', {'forms': form})
 
 
 def login_view(request):
@@ -48,12 +48,11 @@ def login_view(request):
                     token = SessionToken(user=user)
                     token.create_token()
                     token.save()
-                    response = redirect('feed/')
+                    response = redirect('/feed/')
                     response.set_cookie(key='session_token', value=token.session_token)
                     return response
                 else:
                     response_data['message'] = 'Incorrect Password! Please try again!'
-
     elif request.method == 'GET':
         form = LoginForm()
 
@@ -73,15 +72,19 @@ def post_view(request):
                 post = PostModel(user=user, image=image, caption=caption)
                 post.save()
 
-                path = str(BASE_DIR + post.image.url)
+                path = str(BASE_DIR + "/" + post.image.url)
 
-                client = ImgurClient('3402b40cf104724', '3c498635c7ea8cee9831927c8ebda6b9e69e18')
+                client = ImgurClient('3402b40cf104724', '3c498635c7ea8cee8c9831927c8ebda6b9e69e18')
                 post.image_url = client.upload_from_path(path, anon=True)['link']
                 post.save()
 
                 return redirect('/feed/')
             else:
                 return HttpResponse("Form data is not valid.")
+
+        else:
+            form = PostForm()
+        return render(request, 'post.html', {'forms': form})
     else:
         return redirect('/login/')
 
@@ -95,11 +98,10 @@ def feed_view(request):
             if existing_like:
                 post.has_liked = True
 
-        return render (render, 'feeds.html', {'posts': posts})
+        return render(request, 'feeds.html', {'posts': posts})
     else:
 
         return redirect('/login/')
-
 
 
 def like_view(request):
@@ -113,7 +115,7 @@ def like_view(request):
                 LikeModel.objects.create(post_id=post_id, user=user)
             else:
                 existing_like.delete()
-            return redirect('/feed/')
+            return redirect('/feeds/')
     else:
         return redirect('/login/')
 
@@ -127,9 +129,9 @@ def comment_view(request):
             comment_text = form.cleaned_data.get('comment_text')
             comment = CommentModel.objects.create(user=user, post_id=post_id, comment_text=comment_text)
             comment.save()
-            return redirect('/feed/')
+            return redirect('/feeds/')
         else:
-            return redirect('/feed/')
+            return redirect('/feeds/')
     else:
         return redirect('/login')
 

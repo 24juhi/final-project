@@ -1,69 +1,87 @@
-<!Doctype html>
+<!DOCtype html>
 <html>
-<body>
 	<head>
-		<title>sign up</title>
+		<title>Sign Up</title>
 
 		<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!--Bootstrap-->
-		<link href="css/bootstrap.css" rel="stylesheet">
-        		<style>
+		    <!--Bootstrap-->
+		<link href= "css/bootstrap.css" rel="stylesheet">
 
 
-
+		       <style>
+body{
+background-repeat: no-repeat;
+background-position: 50 50;
+}
 </style>
+<script >
+var imgs=new Array()
+imgs[0]="http://cdn.wallpapersafari.com/41/46/IPQ0bO.jpg";
+imgs[1]="https://s-media-cache-ak0.pinimg.com/originals/c8/fb/06/c8fb06511490e55c25f54caf35cf563f.jpg";
+imgs[2]="https://s-media-cache-ak0.pinimg.com/originals/9d/af/a0/9dafa0bf0ab67c3649ce7629a96e31d4.jpg";
+var speed=2000
+var processed=new Array()
+for (i=0;i<imgs.length;i++){
+processed[i]=new Image();
+processed[i].src=imgs[i];
+}
+var inc=-1;
+function slideimg(){
+if (inc<imgs.length-1)
+inc++;
+else
+inc=0;
+document.body.background=processed[inc].src;
+}
+if (document.all||document.getElementById)
+window.onload=new Function('setInterval("slideimg()",speed)');
+</script>
 	</head>
-	<body background="https://s-media-cache-ak0.pinimg.com/originals/f4/af/0d/f4af0d92a1419be64f4a2ea28952f436.jpg">
 
-<td colspan=2><td><font size=4><b>
-    <div class="background-image"></div>
-    <div class="content"></div>
-
-        </div>
-		<center>
-            <center>
-                <h1 style="color:red">INSTAGRAM CLONE</h1>
-			    <h3>Signup</h3>
-			    <!------<h4> today's date and time :{{ today}}</h4>---->
-			    <form method="POST">
-			    {% csrf_token %}
-                <div>
-                    <label for="username">Username: </label>
-                    <input id="username" name="username" value="{{ username }}" type="text">
-                </div><br />
-                <div>
-                    <label for="name">Name: </label>
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="name" name="name" value="{{name}}" type="text">
-                </div><br />
-
-                 <div>
-                    <label for="email">Email: </label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="email" name="email" value="email" type="text">
-                 </div><br />
-
-                 <div>
-                    <label for="password">Password: </label>
-                    <input id="password" name="password" value="{{password}}" type="password">
-                 </div><br />
-                    <center> <input value="Sign Up" style="background-color: #07c ; height:45px; width:100px" type="submit">
-                </form></center>
+        	<body>
 
 
-		    </div>
-            <br><br>
-            <div><h3>Already a user?</h3><a href="login/">Login</a> </div>
-        </center>
 
 
+
+         <td colspan=2><center><font size=4><b>
+		<div>
+			<h1>INSTAGRAM CLONE</h1>
+			<h3>Sign Up</h3>
+
+			<form method="post">
+				{% csrf_token %}
+
+				<div>
+                <label for="username">Username:  </label>
+                <input id="username" type="text" name="username" value={{ username }}>
+            </div><br/>
+
+            <div>
+                <label for="name">Name:  </label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="name" type="text" name="name" value={{ name }}>
+            </div><br/>
+
+            <div>
+                <label for="email">Email: </label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="email" type="text" name="email" value={{ email }}>
+            </div><br/>
+
+            <div>
+                <label for="password">Password: </label>
+                <input id="password" type="password" name="password" value={{ password }}>
+            </div><br/>
+                <input type="submit" value="Sign Up"  style=font-size:10pt;color:black;background-color:#070c;border:2px;height:35px;width:90px">
+			</form>
+		</div><br><br>
 		<!--Javascript files-->
 		<!--Jquery library-->
-		<script src="js/jquery-3.2.1.js"></script>
-</b></font></td>
-</div>
-</body>
+		<!--Bootstrap js Library-->
+		<script src="js/bootstrap.js"></script>
+	<div><h3>Already a user?</h3><a href="login/">Login</a> </div>
+	 </b></font></center></td>
+	</body>
 </html>
-
-

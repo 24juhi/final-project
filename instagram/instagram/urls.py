@@ -1,22 +1,4 @@
-from __future__ import unicode_literals
-#from django.conf.urls import url
-from demoapp.views import signup_view, login_view, feed_view, post_view, like_view, comment_view
-from django.conf.urls import url
-from django.contrib import admin
-from django.conf import settings
-from django.conf.urls.static import static
-
-
-urlpatterns = [
-    url('post/', post_view),
-    url('feed/', feed_view),
-    url('like/', like_view),
-    url('comment/', comment_view),
-    url('login/', login_view),
-    url('', signup_view)
-]
 """instagram URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
 Examples:
@@ -30,3 +12,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.contrib import admin
+from django.conf.urls import url
+from django.conf import settings
+
+from demoapp.views import signup_view, login_view, feed_view, post_view, like_view, comment_view
+
+urlpatterns = [
+    url('post/', post_view),
+    url('feed/', feed_view),
+    url('like/', like_view),
+    url('comment/', comment_view),
+    url('login/', login_view),
+    url('', signup_view),
+]

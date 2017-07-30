@@ -1,29 +1,25 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-    <form method="post" action="/post/">
-        {% csrf_token %}
-        <input type="submit" class="btn-default btn" value="Create Post">
-    </form>
+		<body background="http://sanafir.com.bd/wp-content/uploads/2014/03/fashion.jpeg">
 
-
+        <a class="btn-default btn" href="/post/">Create new post</a>
 
     {% for post in posts %}
 
 
         <h3> Posted by: {{ post.user.username }} </h3>
         <p>[{{ post.created_on }}]</p>
-        <img style="display:inline-block; width:350px; height:300px;" src="{{ post.image_url }}" /><br>
+        <img style="display:inline-block; width:350px;" src="{{ post.image_url }}" /><br>
         <span  style="display:inline-block;">{{ post.caption }}</span><br/><br/>
-        <div style="display:inline-block">
+        <div style="display:inline-block;">
             {{ post.like_count }} likes this
         </div>
-
-        <div style="....">
+        <div style="display:inline-block">
             <form method="POST" action="/like/">
               {% csrf_token %}
               <input type="hidden" name="post" value="{{ post.id }}" />
@@ -52,39 +48,5 @@
         </div>
 
     {% endfor %}
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
