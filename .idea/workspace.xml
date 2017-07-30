@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46585723-3234-4f40-a2af-05e5aa3fb4a6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/demoapp/templates/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/css/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram/static/js/jquery-3.2.1.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/instagram/demoapp/templates/feed.html" afterPath="$PROJECT_DIR$/instagram/demoapp/templates/feeds.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/db.sqlite3" afterPath="$PROJECT_DIR$/instagram/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/demoapp/forms.py" afterPath="$PROJECT_DIR$/instagram/demoapp/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/demoapp/models.py" afterPath="$PROJECT_DIR$/instagram/demoapp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/demoapp/templates/login.html" afterPath="$PROJECT_DIR$/instagram/demoapp/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/demoapp/templates/post.html" afterPath="$PROJECT_DIR$/instagram/demoapp/templates/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/demoapp/templates/signup.html" afterPath="$PROJECT_DIR$/instagram/demoapp/templates/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/demoapp/templates/success.html" afterPath="$PROJECT_DIR$/instagram/demoapp/templates/success.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/demoapp/views.py" afterPath="$PROJECT_DIR$/instagram/demoapp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/instagram/settings.py" afterPath="$PROJECT_DIR$/instagram/instagram/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/instagram/urls.py" afterPath="$PROJECT_DIR$/instagram/instagram/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/instagram/wsgi.py" afterPath="$PROJECT_DIR$/instagram/instagram/wsgi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram/manage.py" afterPath="$PROJECT_DIR$/instagram/manage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
